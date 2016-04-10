@@ -1,0 +1,40 @@
+{
+  "name": "node-couchdb-plugin-memcached",
+  "version": "0.0.1",
+  "description": "node-couchdb plugin to store cache inside Memcached",
+  "main": "dist/build.js",
+  "scripts": {
+    "prepublish": "./node_modules/.bin/babel index.js --out-file dist/build.js",
+    "test": "./node_modules/.bin/mocha --compilers js:babel-register --timeout 30000 --slow 30000 test/"
+  },
+  "author": "Dmitry Sorin <info@staypositive.ru>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/1999/node-couchdb-plugin-memcached.git"
+  },
+  "bugs": {
+    "url": "https://github.com/1999/node-couchdb-plugin-memcached/issues"
+  },
+  "keywords": [
+    "couchdb",
+    "node-couchdb-plugin",
+    "memcached"
+  ],
+  "devDependencies": {
+    "babel-cli": "^6.7.5",
+    "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.7.4",
+    "babel-plugin-transform-es2015-parameters": "^6.7.0",
+    "babel-plugin-transform-es2015-spread": "^6.6.5",
+    "babel-plugin-transform-object-rest-spread": "^6.6.5",
+    "babel-register": "^6.7.2",
+    "mocha": "^2.4.5"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.10"
+  },
+  "dependencies": {
+    "memcached": "^2.2.1"
+  }
+}

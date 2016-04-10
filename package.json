@@ -35,6 +35,6 @@
     "node": ">=0.10"
   },
   "dependencies": {
-    "memcached": "^2.2.1"
+    "memcached": "2.2.1"
   }
 }

@@ -1,5 +1,7 @@
 # node-couchdb-plugin: memcached [![Build Status](https://secure.travis-ci.org/1999/node-couchdb-plugin-memcached.svg?branch=master)](http://travis-ci.org/1999/node-couchdb-plugin-memcached) [![Dependency Status](https://david-dm.org/1999/node-couchdb-plugin-memcached.svg)](https://david-dm.org/1999/node-couchdb-plugin-memcached) [![devDependency Status](https://david-dm.org/1999/node-couchdb-plugin-memcached/dev-status.svg)](https://david-dm.org/1999/node-couchdb-plugin-memcached#info=devDependencies)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/1999/node-couchdb-plugin-memcached.svg)](https://greenkeeper.io/)
+
 Plugin for [node-couchdb](https://www.npmjs.com/package/node-couchdb) to store cache inside Memcached.
 
 ## API

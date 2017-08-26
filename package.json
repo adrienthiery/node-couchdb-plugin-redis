@@ -22,19 +22,19 @@
   ],
   "devDependencies": {
     "babel-cli": "^6.7.5",
-    "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.7.4",
     "babel-plugin-transform-es2015-parameters": "^6.7.0",
     "babel-plugin-transform-es2015-spread": "^6.6.5",
     "babel-plugin-transform-object-rest-spread": "^6.6.5",
     "babel-register": "^6.7.2",
-    "mocha": "^2.4.5"
+    "mocha": "^3.5.0"
   },
   "license": "MIT",
   "engines": {
     "node": ">=4"
   },
   "dependencies": {
-    "memcached": "2.2.1"
+    "memcached": "2.2.2"
   }
 }

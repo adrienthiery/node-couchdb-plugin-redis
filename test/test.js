@@ -8,7 +8,7 @@ describe('node-couchdb-plugin: memcached (basic)', () => {
     it('should expose expected API', () => {
         assert.strictEqual(typeof Cache, 'function', 'exported object is not a function');
 
-        const cache = new Cache('127.0.0.1:11211');
+        const cache = new Cache();
         for (let method of ['get', 'set', 'invalidate']) {
             assert.strictEqual(typeof cache[method], 'function', `cache.${method} is not a function`);
         }
@@ -19,7 +19,7 @@ describe('node-couchdb-plugin: memcached (basic)', () => {
     });
 
     it('should should use async get operation', () => {
-        const cache = new Cache('127.0.0.1:11211');
+        const cache = new Cache();
         let counter = 0;
 
         const getPromise = cache.get('foo').then(() => {
@@ -31,7 +31,7 @@ describe('node-couchdb-plugin: memcached (basic)', () => {
     });
 
     it('should should use async set operation', () => {
-        const cache = new Cache('127.0.0.1:11211');
+        const cache = new Cache();
         let counter = 0;
 
         const setPromise = cache.set('foo', 'bar').then(() => {
@@ -43,7 +43,7 @@ describe('node-couchdb-plugin: memcached (basic)', () => {
     });
 
     it('should should use async invalidate operation', () => {
-        const cache = new Cache('127.0.0.1:11211');
+        const cache = new Cache();
         let counter = 0;
 
         const invalidatePromise = cache.invalidate().then(() => {
@@ -55,7 +55,7 @@ describe('node-couchdb-plugin: memcached (basic)', () => {
     });
 
     it('should set/get existing records', () => {
-        const cache = new Cache('127.0.0.1:11211');
+        const cache = new Cache();
 
         return cache.set('key', 'value')
             .then(() => cache.get('key'))
@@ -63,7 +63,7 @@ describe('node-couchdb-plugin: memcached (basic)', () => {
     });
 
     it('should not get missing records', () => {
-        const cache = new Cache('127.0.0.1:11211');
+        const cache = new Cache();
 
         return cache.get('mising').then(res => {
             assert.strictEqual(res, null);
@@ -71,7 +71,7 @@ describe('node-couchdb-plugin: memcached (basic)', () => {
     });
 
     it('should clear existing records with invalidate', () => {
-        const cache = new Cache('127.0.0.1:11211');
+        const cache = new Cache();
 
         return cache.set('key', 'value')
             .then(() => cache.get('key'))
@@ -79,28 +79,5 @@ describe('node-couchdb-plugin: memcached (basic)', () => {
             .then(() => cache.invalidate())
             .then(() => cache.get('key'))
             .then(res => assert.strictEqual(res, null));
-    });
-});
-
-// memcached-specific API
-describe('node-couchdb-plugin: memcached (advanced)', () => {
-    it('should reject get operation with an error if smth with memcached server goes wrong', () => {
-        const cache = new Cache('127.0.0.1:11211');
-
-        return cache.get({}).then(res => {
-            throw new Error('Promise resolved successfully while Memcached server is down');
-        }, err => {
-            assert(err instanceof Error, 'err is not an Error instance');
-        });
-    });
-
-    it('should reject set operation with an error if smth with memcached server goes wrong', () => {
-        const cache = new Cache('127.0.0.1:11211');
-
-        return cache.set({}, '2').then(res => {
-            throw new Error('Promise resolved successfully while Memcached server is down');
-        }, err => {
-            assert(err instanceof Error, 'err is not an Error instance');
-        });
     });
 });

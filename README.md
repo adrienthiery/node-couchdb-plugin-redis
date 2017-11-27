@@ -1,13 +1,14 @@
-# node-couchdb-plugin: memcached [![Build Status](https://secure.travis-ci.org/1999/node-couchdb-plugin-memcached.svg?branch=master)](http://travis-ci.org/1999/node-couchdb-plugin-memcached) [![Dependency Status](https://david-dm.org/1999/node-couchdb-plugin-memcached.svg)](https://david-dm.org/1999/node-couchdb-plugin-memcached) [![devDependency Status](https://david-dm.org/1999/node-couchdb-plugin-memcached/dev-status.svg)](https://david-dm.org/1999/node-couchdb-plugin-memcached#info=devDependencies)
+# node-couchdb-plugin: redis
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/1999/node-couchdb-plugin-memcached.svg)](https://greenkeeper.io/)
-
-Plugin for [node-couchdb](https://www.npmjs.com/package/node-couchdb) to store cache inside Memcached.
+Plugin for [node-couchdb](https://www.npmjs.com/package/node-couchdb) to store cache inside Redis.
 
 ## API
 ```javascript
-const Cache = require('node-couchdb-plugin-memcached');
+const Cache = require('node-couchdb-plugin-redis');
 
-// accepts same arguments as `memcached` package constructor
-const cacheInstance = new Cache('192.168.0.102:11211', {retry: 0});
+// accepts same arguments as [`redis createClient method`](https://www.npmjs.com/package/redis)
+const cacheInstance = new Cache({
+    host: '127.0.0.1',
+    port: '6379', 
+});
 ```

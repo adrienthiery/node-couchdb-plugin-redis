@@ -1,24 +1,24 @@
 {
-  "name": "node-couchdb-plugin-memcached",
+  "name": "node-couchdb-plugin-redis",
   "version": "0.0.2",
-  "description": "node-couchdb plugin to store cache inside Memcached",
+  "description": "node-couchdb plugin to store cache inside Redis",
   "main": "build.js",
   "scripts": {
     "prepublish": "./node_modules/.bin/babel index.js --out-file build.js",
     "test": "./node_modules/.bin/mocha --compilers js:babel-register --timeout 30000 --slow 30000 test/"
   },
-  "author": "Dmitry Sorin <info@staypositive.ru>",
+  "author": "Adrien Thiery <adrien@nalyze.net> inspired a lot by Dmitry Sorin <info@staypositive.ru>'s node-couchdb-plugin-memcached'",
   "repository": {
     "type": "git",
-    "url": "git://github.com/1999/node-couchdb-plugin-memcached.git"
+    "url": "git://github.com/adrienthiery/node-couchdb-plugin-redis.git"
   },
   "bugs": {
-    "url": "https://github.com/1999/node-couchdb-plugin-memcached/issues"
+    "url": "https://github.com/adrienthiery/node-couchdb-plugin-redis/issues"
   },
   "keywords": [
     "couchdb",
     "node-couchdb-plugin",
-    "memcached"
+    "redis"
   ],
   "devDependencies": {
     "babel-cli": "^6.7.5",
@@ -35,6 +35,6 @@
     "node": ">=4"
   },
   "dependencies": {
-    "memcached": "2.2.2"
+    "redis": "^2.8.0"
   }
 }
